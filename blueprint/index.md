@@ -155,7 +155,7 @@ This data action calls the Microsoft Graph API to update the Zoom user's presenc
 
 3. Select the *Update-Zoom-User-Presence.custom.json* file and associate with the web services data action you created in the [Add a web services data actions integration](#add-a-web-services-data-actions-integration "Goes to the Add a web services data actions integration section") section and click **Import Action**.
 
-   ![Import the Update Zoom User Presence data action](images/5BImportUpdateZoomUserPresenceDataAction.png "Import the SMS data action")
+   ![Import the Update Zoom User Presence data action](images/5BImportUpdateZoomUserPresenceDataAction.png "Import the data action")
 
 ### Import the Architect Workflows
 You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *GC User Set Zoom to Available_v4-0.i3WorkFlow* architect workflows that references the created data actions. These workflows will be called by the Event Orchestration triggers created in the next step.  When triggered, these workflows will call the Find Zoom User ID data action, set the Zoom User Id variable then update the Zoom user's presence via the Graph API.  One workflow is triggered with an agent joins an inbound acd voice interaction and sets the Zoom presence to DoNotDisturb.  The other workflow is triggered when the inbound acd interaction ends and sets the Zoom presence to Available.  

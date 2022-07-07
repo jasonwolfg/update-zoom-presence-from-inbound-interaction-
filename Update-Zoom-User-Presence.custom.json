@@ -1,0 +1,45 @@
+{
+  "name": "Update Zoom User Presence",
+  "integrationType": "custom-rest-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "https://api.zoom.us/v2/users/${input.user}/presence_status",
+      "requestType": "PUT",
+      "headers": {
+        "authorization": "bearer ${authResponse.token}",
+        "content-type": "application/json"
+      },
+      "requestTemplate": "{\n      \"status\": \"${input.status}\"\n  }"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  },
+  "secure": false
+}
