@@ -148,7 +148,7 @@ To create the Event Orchestration triggers via Postman, you must have a Genesys 
 ### Import the Update Zoom User Presence Action
 This data action calls the Microsoft Graph API to update the Zoom user's presence.
 
-1. Download the *Update-Zoom-User-Presence.custom.json* file from the [update-ms-teams-presence-from-inbound-interaction repo](https://github.com/jasonwolfg/update-ms-teams-presence-from-inbound-interaction "Opens the GitHub repo") GitHub repository. Save this file in your local desktop to import it into Genesys Cloud.
+1. Download the *Update-Zoom-User-Presence.custom.json* file from the [update-zoom-presence-from-inbound-interaction repo](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file in your local desktop to import it into Genesys Cloud.
 2. Navigate to **Integrations** > **Actions** and click **Import**.
 
    ![Import the data action](images/4AImportDataActions.png "Import the data action")
@@ -160,7 +160,7 @@ This data action calls the Microsoft Graph API to update the Zoom user's presenc
 ### Import the Architect Workflows
 You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *GC User Set Zoom to Available_v4-0.i3WorkFlow* architect workflows that references the created data actions. These workflows will be called by the Event Orchestration triggers created in the next step.  When triggered, these workflows will call the Find Zoom User ID data action, set the Zoom User Id variable then update the Zoom user's presence via the Graph API.  One workflow is triggered with an agent joins an inbound acd voice interaction and sets the Zoom presence to DoNotDisturb.  The other workflow is triggered when the inbound acd interaction ends and sets the Zoom presence to Available.  
 
-1. Download the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* file from the [update-ms-teams-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-ms-teams-presence-from-inbound-interaction "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
+1. Download the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
 
 2. Navigate to **Admin** > **Architect** > **Flows:Workflow** and click **Add**.
 
@@ -182,7 +182,7 @@ You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *G
 
    ![Save your Workflow](images/ImportedWorkflow1.png "Save Your Workflow")
 
-7. Download the *GC User Set Zoom to Available_v4-0.i3WorkFlow* file from the [update-ms-teams-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-ms-teams-presence-from-inbound-interaction "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
+7. Download the *GC User Set Zoom to Available_v4-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
 
 8. Navigate to **Admin** > **Architect** > **Flows:Workflow** and click **Add**.
 
@@ -207,7 +207,7 @@ You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *G
 ## Create the Event Orchestration Triggers
 With the workflows created, the last step is to create the triggers to call the workflows.  For this, you will need Event Orchestration activated in your Genesys Cloud organization and you will need Postman running on your machine to make the necessary API calls to create the necessary Event Orchestration triggers.
 
-1. Download the *Genesys Cloud Event Orchestration Trigger API's.postman_collection.json* file from the [update-ms-teams-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-ms-teams-presence-from-inbound-interaction "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.
+1. Download the *Genesys Cloud Event Orchestration Trigger API's.postman_collection.json* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.
 
 2. Navigate to Postman and **Import**
 
