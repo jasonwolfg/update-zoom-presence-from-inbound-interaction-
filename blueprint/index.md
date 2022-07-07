@@ -158,9 +158,9 @@ This data action calls the Microsoft Graph API to update the Zoom user's presenc
    ![Import the Update Zoom User Presence data action](images/5BImportUpdateZoomUserPresenceDataAction.png "Import the data action")
 
 ### Import the Architect Workflows
-You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *GC User Set Zoom to Available_v4-0.i3WorkFlow* architect workflows that references the created data actions. These workflows will be called by the Event Orchestration triggers created in the next step.  When triggered, these workflows will call the Find Zoom User ID data action, set the Zoom User Id variable then update the Zoom user's presence via the Graph API.  One workflow is triggered with an agent joins an inbound acd voice interaction and sets the Zoom presence to DoNotDisturb.  The other workflow is triggered when the inbound acd interaction ends and sets the Zoom presence to Available.  
+You need to import the *GC User Set Zoom User to On a Call_v1-0.i3WorkFlow* and *GC User Set Zoom User to Available_v1-0.i3WorkFlow* architect workflows that references the created data action. These workflows will be called by the Event Orchestration triggers created in the next step.  When triggered, these workflows will set the Zoom User to the Genesys Cloud user's username, which must match the corresponding Zoom user's email.  Once the user variable is set, the workflow calls the Zoom API to update the Zoom user's presence.  One workflow is triggered when an agent joins an inbound acd voice interaction and sets the Zoom presence to On_a_call.  The other workflow is triggered when the inbound acd interaction ends and sets the Zoom presence to Available.  
 
-1. Download the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
+1. Download the *GC User Set Zoom User to On a Call_v1-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
 
 2. Navigate to **Admin** > **Architect** > **Flows:Workflow** and click **Add**.
 
@@ -174,7 +174,7 @@ You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *G
 
    ![Import Your Workflow](images/ImportWorkflow1.png "Import Your Workflow")
 
-5. Select the downloaded *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* file.  Click **Import**.
+5. Select the downloaded *GC User Set Zoom User to On a Call_v1-0.i3WorkFlow* file.  Click **Import**.
 
    ![Import your Workflow File](images/SelectWorkflow1ImportFile.png "Import your Workflow File")
 
@@ -182,7 +182,7 @@ You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *G
 
    ![Save your Workflow](images/ImportedWorkflow1.png "Save Your Workflow")
 
-7. Download the *GC User Set Zoom to Available_v4-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
+7. Download the *GC User Set Zoom User to Available_v1-0.i3WorkFlow* file from the [update-zoom-presence-from-inbound-interaction](https://github.com/jasonwolfg/update-zoom-presence-from-inbound-interaction- "Opens the GitHub repo") GitHub repository. Save this file to your local desktop to import it into Genesys Cloud.  
 
 8. Navigate to **Admin** > **Architect** > **Flows:Workflow** and click **Add**.
 
@@ -196,7 +196,7 @@ You need to import the *GC User Set Zoom to DoNotDisturb_v8-0.i3WorkFlow* and *G
 
   ![Import Your Workflow](images/ImportWorkflow2.png "Import Your Workflow")
 
-11. Select the downloaded *GC User Set Zoom to Available_v4-0.i3WorkFlowI’m * file.  Click **Import**.
+11. Select the downloaded *GC User Set Zoom User to Available_v1-0.i3WorkFlow* file.  Click **Import**.
 
   ![Import your Workflow File](images/SelectWorkflow2ImportFile.png "Import your Workflow File")
 
